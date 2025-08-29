@@ -25,12 +25,20 @@ def home():
 @app.route('/bfhl', methods=['POST', 'GET'])
 def bfhl():
     if request.method == 'GET':
-        # Friendly message for browser visit
-        return jsonify({
-            "message": "BFHL API is live. Please send a POST request with JSON data at this endpoint.",
+        # Return example response when visiting /bfhl directly
+        sample_response = {
+            "is_success": True,
             "user_id": USER_ID,
-            "is_success": False
-        }), 200
+            "email": EMAIL,
+            "roll_number": ROLL_NUMBER,
+            "odd_numbers": ["1"],
+            "even_numbers": ["334","4"],
+            "alphabets": ["A","R"],
+            "special_characters": ["$"],
+            "sum": "339",
+            "concat_string": "Ra"
+        }
+        return jsonify(sample_response), 200
 
     try:
         data = request.json.get("data", [])
