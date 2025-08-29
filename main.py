@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 # User details
 USER_ID = "john_doe_17091999"
-EMAIL = "john@xyz.com"
+EMAIL = os.getenv("EMAIL", "john@xyz.com")
 ROLL_NUMBER = "ABCD123"
 
 def alternating_caps(s):
@@ -72,3 +72,4 @@ def bfhl():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
