@@ -22,8 +22,16 @@ def alternating_caps(s):
 def home():
     return render_template('index.html')
 
-@app.route('/bfhl', methods=['POST'])
+@app.route('/bfhl', methods=['POST', 'GET'])
 def bfhl():
+    if request.method == 'GET':
+        # Friendly message for browser visit
+        return jsonify({
+            "message": "BFHL API is live. Please send a POST request with JSON data at this endpoint.",
+            "user_id": USER_ID,
+            "is_success": False
+        }), 200
+
     try:
         data = request.json.get("data", [])
         if not isinstance(data, list):
@@ -72,5 +80,3 @@ def bfhl():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
