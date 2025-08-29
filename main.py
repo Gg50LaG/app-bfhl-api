@@ -3,9 +3,9 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 
 # User details
-USER_ID = "john_doe_17091999"
-EMAIL = os.getenv("EMAIL", "john@xyz.com")
-ROLL_NUMBER = "ABCD123"
+USER_ID = "Gg50LaG"
+EMAIL = "gayatri.goverdhan@gmail.com"
+ROLL_NUMBER = "22BCI0134"
 
 def alternating_caps(s):
     result = ""
@@ -72,4 +72,5 @@ def bfhl():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
